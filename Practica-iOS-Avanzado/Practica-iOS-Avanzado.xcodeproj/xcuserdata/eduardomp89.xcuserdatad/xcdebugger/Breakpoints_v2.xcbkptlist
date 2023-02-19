@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "012E71D4-9B14-4442-8307-6BC4C008B874"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "98767787-A62D-42EB-9563-AE6F60D78464"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Practica-iOS-Avanzado/HeroList/MvvM/LoginViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "LoginViewModel"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "98767787-A62D-42EB-9563-AE6F60D78464 - 62ed738d258c2fd9"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Practica_iOS_Avanzado.LoginViewModel.__allocating_init() -&gt; Practica_iOS_Avanzado.LoginViewModel"
+                  moduleName = "Practica-iOS-Avanzado"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eduardomp89/Desktop/Pra%CC%81cticas%20Bootcamp%20Mobile%20XV/Practica-iOS-Avanzado/Practica-iOS-Avanzado/Practica-iOS-Avanzado/HeroList/MvvM/LoginViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  uuid = "98767787-A62D-42EB-9563-AE6F60D78464 - 9305ab2f182df79e"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Practica_iOS_Avanzado.LoginViewModel.init() -&gt; Practica_iOS_Avanzado.LoginViewModel"
+                  moduleName = "Practica-iOS-Avanzado"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eduardomp89/Desktop/Pra%CC%81cticas%20Bootcamp%20Mobile%20XV/Practica-iOS-Avanzado/Practica-iOS-Avanzado/Practica-iOS-Avanzado/HeroList/MvvM/LoginViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "98767787-A62D-42EB-9563-AE6F60D78464 - b7480e931481f757"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Practica_iOS_Avanzado.LoginViewModel.__deallocating_deinit"
+                  moduleName = "Practica-iOS-Avanzado"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eduardomp89/Desktop/Pra%CC%81cticas%20Bootcamp%20Mobile%20XV/Practica-iOS-Avanzado/Practica-iOS-Avanzado/Practica-iOS-Avanzado/HeroList/MvvM/LoginViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2E20B22E-A2D6-460D-8403-0394B26324D9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Practica-iOS-Avanzado/Login/LoginView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "LoginView"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "930D47AF-2A5D-4B23-BDC4-10E33B3E5584"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Practica-iOS-Avanzado/Login/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "LoginViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "930D47AF-2A5D-4B23-BDC4-10E33B3E5584 - f7625673174c8126"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Practica_iOS_Avanzado.LoginViewController.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Practica_iOS_Avanzado.LoginViewController"
+                  moduleName = "Practica-iOS-Avanzado"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eduardomp89/Desktop/Pra%CC%81cticas%20Bootcamp%20Mobile%20XV/Practica-iOS-Avanzado/Practica-iOS-Avanzado/Practica-iOS-Avanzado/Login/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "930D47AF-2A5D-4B23-BDC4-10E33B3E5584 - 14f27d6449aa19c3"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Practica_iOS_Avanzado.LoginViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Practica_iOS_Avanzado.LoginViewController"
+                  moduleName = "Practica-iOS-Avanzado"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eduardomp89/Desktop/Pra%CC%81cticas%20Bootcamp%20Mobile%20XV/Practica-iOS-Avanzado/Practica-iOS-Avanzado/Practica-iOS-Avanzado/Login/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "156">
+               </Location>
+               <Location
+                  uuid = "930D47AF-2A5D-4B23-BDC4-10E33B3E5584 - e589b57c293a14dc"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Practica_iOS_Avanzado.LoginViewController.__deallocating_deinit"
+                  moduleName = "Practica-iOS-Avanzado"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eduardomp89/Desktop/Pra%CC%81cticas%20Bootcamp%20Mobile%20XV/Practica-iOS-Avanzado/Practica-iOS-Avanzado/Practica-iOS-Avanzado/Login/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DA806695-6E21-4D07-A675-0019C0862EFD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Practica-iOS-Avanzado/Login/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "10"
+            endingLineNumber = "10"
+            landmarkName = "LoginDelegate"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A4833989-5597-491F-807D-CB1C1B86B91B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Practica-iOS-Avanzado/Login/LoginViewControllerNotif.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "LoginViewControllerNotif"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "A4833989-5597-491F-807D-CB1C1B86B91B - 1132638268397852"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Practica_iOS_Avanzado.LoginViewControllerNotif.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Practica_iOS_Avanzado.LoginViewControllerNotif"
+                  moduleName = "Practica-iOS-Avanzado"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eduardomp89/Desktop/Pra%CC%81cticas%20Bootcamp%20Mobile%20XV/Practica-iOS-Avanzado/Practica-iOS-Avanzado/Practica-iOS-Avanzado/Login/LoginViewControllerNotif.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "A4833989-5597-491F-807D-CB1C1B86B91B - 5f50905e074c9869"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Practica_iOS_Avanzado.LoginViewControllerNotif.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Practica_iOS_Avanzado.LoginViewControllerNotif"
+                  moduleName = "Practica-iOS-Avanzado"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eduardomp89/Desktop/Pra%CC%81cticas%20Bootcamp%20Mobile%20XV/Practica-iOS-Avanzado/Practica-iOS-Avanzado/Practica-iOS-Avanzado/Login/LoginViewControllerNotif.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "120">
+               </Location>
+               <Location
+                  uuid = "A4833989-5597-491F-807D-CB1C1B86B91B - c8be0b81eaaa2cf5"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Practica_iOS_Avanzado.LoginViewControllerNotif.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Practica_iOS_Avanzado.LoginViewControllerNotif&gt;"
+                  moduleName = "Practica-iOS-Avanzado"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eduardomp89/Desktop/Pra%CC%81cticas%20Bootcamp%20Mobile%20XV/Practica-iOS-Avanzado/Practica-iOS-Avanzado/Practica-iOS-Avanzado/Login/LoginViewControllerNotif.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "A4833989-5597-491F-807D-CB1C1B86B91B - 6adecbb5592747d8"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Practica_iOS_Avanzado.LoginViewControllerNotif.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Practica_iOS_Avanzado.LoginViewControllerNotif&gt;"
+                  moduleName = "Practica-iOS-Avanzado"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eduardomp89/Desktop/Pra%CC%81cticas%20Bootcamp%20Mobile%20XV/Practica-iOS-Avanzado/Practica-iOS-Avanzado/Practica-iOS-Avanzado/Login/LoginViewControllerNotif.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "96">
+               </Location>
+               <Location
+                  uuid = "A4833989-5597-491F-807D-CB1C1B86B91B - 53c1bd93df218efe"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Practica_iOS_Avanzado.LoginViewControllerNotif.__deallocating_deinit"
+                  moduleName = "Practica-iOS-Avanzado"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eduardomp89/Desktop/Pra%CC%81cticas%20Bootcamp%20Mobile%20XV/Practica-iOS-Avanzado/Practica-iOS-Avanzado/Practica-iOS-Avanzado/Login/LoginViewControllerNotif.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

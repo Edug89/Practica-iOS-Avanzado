@@ -1,20 +1,15 @@
 //
-//  LoginViewController.swift
+//  LoginViewControllerNotif.swift
 //  Practica-iOS-Avanzado
 //
-//  Created by Eduardo Martinez Palomino on 15/2/23.
+//  Created by Eduardo Martinez Palomino on 18/2/23.
 //
 
+import Foundation
 import UIKit
 
-protocol LoginDelegate {
-    func dismiss()
-}
-
-class LoginViewController: UIViewController {
-    
+class LoginViewControllerNotif: UIViewController {
     var mainView: LoginView {self.view as! LoginView}
-    
     
     var loginButton : UIButton?
     var emailTextfield : UITextField?
@@ -22,16 +17,6 @@ class LoginViewController: UIViewController {
     var errorMessageView: UILabel?
     
     var viewModel: LoginViewModel?
-    
-    var delegate: LoginDelegate?
-    init(delegate: LoginDelegate) {
-        super.init(nibName: nil, bundle: nil)
-        self.delegate = delegate
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
     
     
     override func loadView() {
@@ -50,16 +35,15 @@ class LoginViewController: UIViewController {
         
         viewModel = LoginViewModel()
         
-        loginButton?.addTarget(self, action: #selector(didLoginTapped), for: .touchUpInside)
+//        loginButton?.addTarget(self, action: #selector(didLoginTapped), for: .touchUpInside)
         
 //        #if DEBUG
-//        
+//
 //        emailTextfield?.text = "pmg@test.com"
 //        passwordTextfield?.text = "!Test1234"
-//        
+//
 //        #endif
     }
-
     
 //    @objc
 //    func didLoginTapped(sender: UIButton) {
@@ -73,7 +57,6 @@ class LoginViewController: UIViewController {
 //            if !token.isEmpty {
 //                authToken = token // almacenarlo globalmente
 //
-//                self?.delegate?.dismiss()
 //
 //
 //                return
@@ -90,39 +73,7 @@ class LoginViewController: UIViewController {
 //        // Call view model to perform the login call with the apiClient
 //        viewModel?.login(email: email, password: password)
 //    }
-
-    @objc
-    func didLoginTapped(sender: UIButton) {
-        guard let email = emailTextfield?.text, let password = passwordTextfield?.text else {
-            return
-        }
-
-        debugPrint("login for: \(email) - \(password)")
-
-        viewModel?.updateUI = { [weak self] token, error in
-            if !token.isEmpty {
-                authToken = token // almacenarlo globalmente
-
-                DispatchQueue.main.async {
-                    let heroesListViewController = HeroesListViewController()
-                    self?.present(heroesListViewController, animated: true, completion: nil)
-                }
-                return
-            }
-
-            if !error.isEmpty {
-                DispatchQueue.main.async {
-                    self?.errorMessageView?.text = error
-                }
-                authToken = ""
-            }
-        }
-
-        // Call view model to perform the login call with the apiClient
-        viewModel?.login(email: email, password: password)
-    }
-
+//
 }
-
 
 

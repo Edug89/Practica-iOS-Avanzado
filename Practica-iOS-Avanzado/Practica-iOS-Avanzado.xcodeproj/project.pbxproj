@@ -19,6 +19,16 @@
 		1464107229A0085600C07B6E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1464107129A0085600C07B6E /* Constants.swift */; };
 		1464107429A008CD00C07B6E /* HeroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1464107329A008CD00C07B6E /* HeroModel.swift */; };
 		1464107629A00E0D00C07B6E /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1464107529A00E0D00C07B6E /* Globals.swift */; };
+		1464107829A0DC9F00C07B6E /* LoginViewControllerNotif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1464107729A0DC9F00C07B6E /* LoginViewControllerNotif.swift */; };
+		1464107B29A22F4000C07B6E /* keyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1464107A29A22F4000C07B6E /* keyChain.swift */; };
+		1464107D29A239C400C07B6E /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1464107C29A239C400C07B6E /* HomeTabBarController.swift */; };
+		1464108229A23B1700C07B6E /* HeroListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1464108129A23B1700C07B6E /* HeroListView.swift */; };
+		1464108629A2B04500C07B6E /* HeroListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1464108529A2B04500C07B6E /* HeroListViewModel.swift */; };
+		1464108829A2B08100C07B6E /* HeroListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1464108729A2B08100C07B6E /* HeroListViewCell.swift */; };
+		1464108B29A2B1EC00C07B6E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 1464108A29A2B1EC00C07B6E /* Kingfisher */; };
+		1464108E29A2B24700C07B6E /* HerosListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1464108D29A2B24700C07B6E /* HerosListDataSource.swift */; };
+		1464109029A2B27800C07B6E /* HeroListTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1464108F29A2B27800C07B6E /* HeroListTableViewDelegate.swift */; };
+		1464109229A2B29500C07B6E /* HeroListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1464109129A2B29500C07B6E /* HeroListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +46,15 @@
 		1464107129A0085600C07B6E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1464107329A008CD00C07B6E /* HeroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroModel.swift; sourceTree = "<group>"; };
 		1464107529A00E0D00C07B6E /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		1464107729A0DC9F00C07B6E /* LoginViewControllerNotif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerNotif.swift; sourceTree = "<group>"; };
+		1464107A29A22F4000C07B6E /* keyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keyChain.swift; sourceTree = "<group>"; };
+		1464107C29A239C400C07B6E /* HomeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
+		1464108129A23B1700C07B6E /* HeroListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroListView.swift; sourceTree = "<group>"; };
+		1464108529A2B04500C07B6E /* HeroListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroListViewModel.swift; sourceTree = "<group>"; };
+		1464108729A2B08100C07B6E /* HeroListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroListViewCell.swift; sourceTree = "<group>"; };
+		1464108D29A2B24700C07B6E /* HerosListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HerosListDataSource.swift; sourceTree = "<group>"; };
+		1464108F29A2B27800C07B6E /* HeroListTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroListTableViewDelegate.swift; sourceTree = "<group>"; };
+		1464109129A2B29500C07B6E /* HeroListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1464108B29A2B1EC00C07B6E /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,7 +89,9 @@
 		1464101D299D61FA00C07B6E /* Practica-iOS-Avanzado */ = {
 			isa = PBXGroup;
 			children = (
+				1464107929A22F2E00C07B6E /* KeyChain */,
 				14641032299D6D2600C07B6E /* Login */,
+				1464108029A239EC00C07B6E /* HomeTabBarController */,
 				1464106929A0063700C07B6E /* HeroList */,
 				1464107029A0084200C07B6E /* Utils */,
 				1464101E299D61FA00C07B6E /* AppDelegate.swift */,
@@ -87,6 +109,7 @@
 			children = (
 				14641033299D6D6500C07B6E /* LoginView.swift */,
 				14641035299D6DAF00C07B6E /* LoginViewController.swift */,
+				1464107729A0DC9F00C07B6E /* LoginViewControllerNotif.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -94,8 +117,10 @@
 		1464106929A0063700C07B6E /* HeroList */ = {
 			isa = PBXGroup;
 			children = (
-				1464106D29A007F800C07B6E /* Model */,
 				1464106A29A0068300C07B6E /* MvvM */,
+				1464108C29A2B22C00C07B6E /* Controller */,
+				1464106D29A007F800C07B6E /* Model */,
+				1464108329A23B9D00C07B6E /* View */,
 			);
 			path = HeroList;
 			sourceTree = "<group>";
@@ -104,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				1464106B29A007A000C07B6E /* LoginViewModel.swift */,
+				1464108529A2B04500C07B6E /* HeroListViewModel.swift */,
 			);
 			path = MvvM;
 			sourceTree = "<group>";
@@ -125,6 +151,41 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		1464107929A22F2E00C07B6E /* KeyChain */ = {
+			isa = PBXGroup;
+			children = (
+				1464107A29A22F4000C07B6E /* keyChain.swift */,
+			);
+			path = KeyChain;
+			sourceTree = "<group>";
+		};
+		1464108029A239EC00C07B6E /* HomeTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				1464107C29A239C400C07B6E /* HomeTabBarController.swift */,
+			);
+			path = HomeTabBarController;
+			sourceTree = "<group>";
+		};
+		1464108329A23B9D00C07B6E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1464108129A23B1700C07B6E /* HeroListView.swift */,
+				1464108729A2B08100C07B6E /* HeroListViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1464108C29A2B22C00C07B6E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1464108D29A2B24700C07B6E /* HerosListDataSource.swift */,
+				1464108F29A2B27800C07B6E /* HeroListTableViewDelegate.swift */,
+				1464109129A2B29500C07B6E /* HeroListViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -141,6 +202,9 @@
 			dependencies = (
 			);
 			name = "Practica-iOS-Avanzado";
+			packageProductDependencies = (
+				1464108A29A2B1EC00C07B6E /* Kingfisher */,
+			);
 			productName = "Practica-iOS-Avanzado";
 			productReference = 1464101B299D61FA00C07B6E /* Practica-iOS-Avanzado.app */;
 			productType = "com.apple.product-type.application";
@@ -169,6 +233,9 @@
 				Base,
 			);
 			mainGroup = 14641012299D61F900C07B6E;
+			packageReferences = (
+				1464108929A2B1EC00C07B6E /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 1464101C299D61FA00C07B6E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -196,15 +263,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1464109229A2B29500C07B6E /* HeroListViewController.swift in Sources */,
 				1464107229A0085600C07B6E /* Constants.swift in Sources */,
 				1464107429A008CD00C07B6E /* HeroModel.swift in Sources */,
+				1464109029A2B27800C07B6E /* HeroListTableViewDelegate.swift in Sources */,
+				1464107D29A239C400C07B6E /* HomeTabBarController.swift in Sources */,
+				1464107B29A22F4000C07B6E /* keyChain.swift in Sources */,
 				1464101F299D61FA00C07B6E /* AppDelegate.swift in Sources */,
 				14641034299D6D6500C07B6E /* LoginView.swift in Sources */,
 				14641036299D6DAF00C07B6E /* LoginViewController.swift in Sources */,
+				1464108829A2B08100C07B6E /* HeroListViewCell.swift in Sources */,
 				1464106C29A007A000C07B6E /* LoginViewModel.swift in Sources */,
 				14641021299D61FA00C07B6E /* SceneDelegate.swift in Sources */,
 				1464106F29A0081200C07B6E /* ApiClient.swift in Sources */,
+				1464108229A23B1700C07B6E /* HeroListView.swift in Sources */,
+				1464108E29A2B24700C07B6E /* HerosListDataSource.swift in Sources */,
 				1464107629A00E0D00C07B6E /* Globals.swift in Sources */,
+				1464108629A2B04500C07B6E /* HeroListViewModel.swift in Sources */,
+				1464107829A0DC9F00C07B6E /* LoginViewControllerNotif.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +496,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1464108929A2B1EC00C07B6E /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1464108A29A2B1EC00C07B6E /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1464108929A2B1EC00C07B6E /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 14641013299D61F900C07B6E /* Project object */;
 }

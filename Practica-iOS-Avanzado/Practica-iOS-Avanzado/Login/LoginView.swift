@@ -23,6 +23,8 @@ class LoginView: UIView {
     let emailTextField = {
         let textField = UITextField()
         
+        textField.placeholder = "EMAIL"
+        textField.autocapitalizationType = UITextAutocapitalizationType.none
         textField.backgroundColor = .gray.withAlphaComponent(0.2)
         textField.textColor = .black
         textField.font = UIFont.systemFont(ofSize: 14)
@@ -35,6 +37,7 @@ class LoginView: UIView {
     let passwordTextField = {
         let textField = UITextField()
         
+        textField.placeholder = "PASSWORD"
         textField.backgroundColor = .gray.withAlphaComponent(0.2)
         textField.textColor = .black
         textField.font = UIFont.systemFont(ofSize: 14)
