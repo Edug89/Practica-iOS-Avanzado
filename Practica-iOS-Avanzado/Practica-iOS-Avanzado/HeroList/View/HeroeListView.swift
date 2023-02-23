@@ -8,11 +8,11 @@
 import Foundation
 import UIKit
 
-class HeroListView: UIView {
+class HeroeListView: UIView {
     
     let headerLabel = {
         let label = UILabel()
-        label.text = "MVVM"
+//        label.text = "MVVM"
         label.numberOfLines = 0
         label.textColor = .black
         label.textAlignment = .center
@@ -39,15 +39,15 @@ class HeroListView: UIView {
     
     func setupView() {
         
-        backgroundColor = .white
+        backgroundColor = .gray
         addSubview(headerLabel)
         addSubview(heroesTableView)
         
         NSLayoutConstraint.activate([
-            headerLabel.topAnchor.constraint(equalTo: topAnchor, constant: 60),
+            headerLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20),
             headerLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             headerLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            headerLabel.heightAnchor.constraint(equalToConstant: 40),
+            headerLabel.heightAnchor.constraint(equalToConstant: 20),
             
             heroesTableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             heroesTableView.trailingAnchor.constraint(equalTo: trailingAnchor),

@@ -9,8 +9,10 @@ import UIKit
 
 class HeroesListViewController: UIViewController {
     
-    var mainView: HeroListView {self.view as! HeroListView}
+    var mainView: HeroeListView {self.view as! HeroeListView}
+    
     var heroesList: [HeroModel] = []
+
     private var tableViewDataSource: HeroesListTableViewDataSource?
     private var tableVideDelegate: HeroesListTableViewDelegate?
     
@@ -18,74 +20,32 @@ class HeroesListViewController: UIViewController {
     private var loginViewModel = LoginViewModel()
     
     private var loginViewController: LoginViewController?
-    private var loginViewControllerNotif: LoginViewControllerNotif?
+
     
     override func loadView() {
-        view = HeroListView()
+        view = HeroeListView()
+        setTableElements()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setTableElements()
+        heroeListViewModel = HeroesListViewModel(apiClient: ApiClient.shared)
+        getData()
 //        setDidTapOnCell()
-        
-        addNotification()
         
         // check if user is logged in
         if !isUserAuthenticated() {
-            //            // Creo el LoginViewController
-            //            loginViewController = LoginViewController(delegate: self)
-            //
-            //
-            //            if let loginViewController  { //Es lo mismo que si pones = loginViewController 5,7
-            //                loginViewController.modalPresentationStyle = .fullScreen
-            //                //Aquí indicamos que ocupa toda la pantalla el login para que no puedan hacer scroll y quitarla
-            //                self.navigationController?.present(loginViewController, animated: true)
-            //            }
-            //            return
-            if let loginViewControllerNotif  { //Es lo mismo que si pones = loginViewController 5,7
-                loginViewControllerNotif.modalPresentationStyle = .fullScreen
-                self.navigationController?.present(loginViewControllerNotif, animated: true)
-            }
             
+            loginViewController = LoginViewController(delegate: self) // Creo el LoginViewController
+            if let loginViewController  { //Es lo mismo que si pones = loginViewController 5,7
+                loginViewController.modalPresentationStyle = .fullScreen //Aquí indicamos que ocupa toda la pantalla del login,y no puedan quitarla.
+                self.navigationController?.present(loginViewController, animated: true)
+            }
             return
         }
-        // get heroes data
-        getData()
-        
     }
     
-    func addNotification() {
-        // Comienzo a "escuchar" la notificación que me interesa(Se activa por así decirlo)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(loginResult(_:)),
-                                               name: NSNotification.Name("notificacion.login.result"),
-                                               object: nil)
-    }
-    
-    func removeNotification() {
-        NotificationCenter.default.removeObserver(self,
-                                                  name: NSNotification.Name("notificacion.login.result"),
-                                                  object: nil)
-    }
-    
-    @objc
-    func loginResult(_ notification: Notification) {
-        debugPrint("haciendo algo al recibir la notificación")
-        let result = notification.userInfo?["miData"] as? [String: Any]
-        
-        if let result {
-            debugPrint("Notification result -> \(result)")
-            
-            if let token = result["token"] as? String, !token.isEmpty {
-                // oculto el formulario de login
-                DispatchQueue.main.async {
-                    self.loginViewControllerNotif?.dismiss(animated: true)
-                }
-            }
-        }
-    }
     
     private func setTableElements() {
         tableVideDelegate = HeroesListTableViewDelegate()
@@ -127,6 +87,8 @@ extension HeroesListViewController: LoginDelegate {
         DispatchQueue.main.async {
             self.loginViewController?.dismiss(animated: true)
             //En esta func indicamos que cierre el Login
+            self.getData()
         }
     }
+    
 }

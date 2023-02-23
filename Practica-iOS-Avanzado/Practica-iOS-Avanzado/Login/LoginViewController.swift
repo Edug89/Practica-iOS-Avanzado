@@ -52,60 +52,28 @@ class LoginViewController: UIViewController {
         
         loginButton?.addTarget(self, action: #selector(didLoginTapped), for: .touchUpInside)
         
-//        #if DEBUG
-//        
-//        emailTextfield?.text = "pmg@test.com"
-//        passwordTextfield?.text = "!Test1234"
-//        
-//        #endif
+        #if DEBUG
+        
+        emailTextfield?.text = "edugproduce@gmail.com"
+        passwordTextfield?.text = "200789"
+        
+        #endif
     }
-
-    
-//    @objc
-//    func didLoginTapped(sender: UIButton) {
-//        guard let email = emailTextfield?.text, let password = passwordTextfield?.text else {
-//            return
-//        }
-//
-//        debugPrint("login for: \(email) - \(password)")
-//
-//        viewModel?.updateUI = { [weak self] token, error in
-//            if !token.isEmpty {
-//                authToken = token // almacenarlo globalmente
-//
-//                self?.delegate?.dismiss()
-//
-//
-//                return
-//            }
-//
-//            if !error.isEmpty {
-//                DispatchQueue.main.async {
-//                    self?.errorMessageView?.text = error
-//                }
-//                authToken = ""
-//            }
-//        }
-//
-//        // Call view model to perform the login call with the apiClient
-//        viewModel?.login(email: email, password: password)
-//    }
 
     @objc
     func didLoginTapped(sender: UIButton) {
-        guard let email = emailTextfield?.text, let password = passwordTextfield?.text else {
+        guard let email = emailTextfield?.text, let password = passwordTextfield?.text else { //Una vez pulsamos el botón de acceder,comprueba el token que no está vacío y navegamos al HomeTabBarController
             return
         }
-
-        debugPrint("login for: \(email) - \(password)")
 
         viewModel?.updateUI = { [weak self] token, error in
             if !token.isEmpty {
                 authToken = token // almacenarlo globalmente
 
                 DispatchQueue.main.async {
-                    let heroesListViewController = HeroesListViewController()
-                    self?.present(heroesListViewController, animated: true, completion: nil)
+                    let homeTabBarController = HomeTabBarController()
+                    homeTabBarController.modalPresentationStyle = .fullScreen
+                    self?.present(homeTabBarController, animated: true, completion: nil)
                 }
                 return
             }

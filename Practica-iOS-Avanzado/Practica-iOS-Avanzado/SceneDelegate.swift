@@ -19,12 +19,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
       window?.windowScene = windowScene
-        
-       
-//        let herolistViewController  = HeroesListViewController()
-//
-//        let navVC = UINavigationController(rootViewController: herolistViewController)
-//               window?.rootViewController = navVC
+    
+        let homeTabBarController  = HomeTabBarController()
+        let navVC = UINavigationController(rootViewController: homeTabBarController)
+               window?.rootViewController = navVC
         
         window?.makeKeyAndVisible()
     }

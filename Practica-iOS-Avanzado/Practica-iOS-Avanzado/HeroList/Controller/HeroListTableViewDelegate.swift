@@ -13,7 +13,7 @@ class HeroesListTableViewDelegate: NSObject, UITableViewDelegate {
     var didTapOnCell: ((Int) -> Void)?
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        120
+        130
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

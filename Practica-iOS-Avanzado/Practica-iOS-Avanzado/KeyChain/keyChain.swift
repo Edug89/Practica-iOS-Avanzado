@@ -5,48 +5,104 @@
 //  Created by Eduardo Martinez Palomino on 19/2/23.
 //
 
-import Foundation
+import UIKit
 import Security
 
-struct AuthInfo {
-    let service: String
-    let account: String
-    let token: String
-}
+class KeyChainManager {
 
-
-func saveAuthInfo(_ authInfo: AuthInfo) -> Bool {
-    // Crea un diccionario que describe la información de autenticación
-    let query: [String: Any] = [
-        kSecClass as String: kSecClassGenericPassword,
-        kSecAttrService as String: authInfo.service,
-        kSecAttrAccount as String: authInfo.account,
-        kSecValueData as String: authInfo.token.data(using: .utf8)!
-    ]
     
-    // Guarda la información en el Keychain
-    let status = SecItemAdd(query as CFDictionary, nil)
-    return status == errSecSuccess
-}
-
-
-func loadAuthInfo(service: String, account: String) -> AuthInfo? {
-    // Crea un diccionario que describe la información de autenticación que se desea recuperar
-    let query: [String: Any] = [
-        kSecClass as String: kSecClassGenericPassword,
-        kSecAttrService as String: service,
-        kSecAttrAccount as String: account,
-        kSecReturnData as String: kCFBooleanTrue!,
-        kSecMatchLimit as String: kSecMatchLimitOne
-    ]
-    
-    // Recupera la información del Keychain
-    var item: CFTypeRef?
-    let status = SecItemCopyMatching(query as CFDictionary, &item)
-    
-    if status == errSecSuccess, let data = item as? Data, let token = String(data: data, encoding: .utf8) {
-        return AuthInfo(service: service, account: account, token: token)
-    } else {
-        return nil
+    func deleteData(key: String) {
+        // Preparamos la consulta
+        let query: [String: Any] = [
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrAccount as String: key,
+            ]
+        if (SecItemDelete(query as CFDictionary)) == noErr {
+            debugPrint("Información del usuario borrada con éxito")
+        } else {
+            debugPrint("Se produjo un error a la hora de borrar")
+        }
+        
     }
+    
+    
+    func updateData(key: String, value: String) {
+ 
+        // Preparamos la consulta
+        let query: [String: Any] = [
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrAccount as String: key,
+        ]
+        
+        //Atribunos necesarios para actualizar
+        let attributes: [String: Any] = [
+            kSecValueData as String: value.data(using: .utf8)!
+        ]
+        
+        if (SecItemUpdate(query as CFDictionary, attributes as CFDictionary)) == noErr {
+            debugPrint("Información del usuario actualizada con éxito")
+        } else {
+            debugPrint("Se produjo un error a la hora de actualizar")
+        }
+    }
+    
+    //Establecer el susuario que queremos encontrar
+    func readData(user: String) {
+        
+        
+        // Preparamos la consulta
+        let query: [String: Any] = [
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrAccount as String: user,
+            kSecMatchLimit as String: kSecMatchLimitOne,
+            kSecReturnAttributes as String: true,
+            kSecReturnData as String: true
+        ]
+        
+        var item: CFTypeRef?
+        
+        if SecItemCopyMatching(query as CFDictionary, &item) == noErr {
+            //extraemos la información
+            
+            if let existingItem = item as? [String: Any],
+                let username = existingItem[kSecAttrAccount as String] as? String,
+                let passwordData = existingItem[kSecValueData as String] as? Data, //El password lo pasamos de utf8 a DATA
+                let password = String(data: passwordData, encoding: .utf8) { //Aquí descodificamos data
+                
+                debugPrint("La info es \(username) - \(password)")
+            }
+            
+            
+        } else {
+            debugPrint("Se produjo un erro al consultar la información del usuario")
+        }
+        
+    }
+    
+    //Función para guardar
+    func saveData() {
+        
+        // definimos un usuario
+        let username = "peter"
+        let password = "12345".data(using: .utf8)!
+        
+        //preparamos los atributos necesarios(Lo guardamos como un diccionario nombre+valor)
+        let attributes: [String: Any] = [
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrAccount as String: username,
+            kSecValueData as String: password
+            
+        ]
+        
+        //guardar el usuario
+        if SecItemAdd(attributes as CFDictionary, nil) == noErr {
+            debugPrint("Información del usuario guardada con éxito")
+        } else {
+            debugPrint("Se produjo un errror al guardar la información del ususario")
+        }
+        
+        
+    }
+
 }
+

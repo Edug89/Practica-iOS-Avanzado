@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 enum NetworkError: Error {
   case malformedURL
   case noData
@@ -18,6 +17,8 @@ enum NetworkError: Error {
 
 final class ApiClient {
   
+  public static var shared = ApiClient()
+    
   private var token: String?
   
   convenience init(token: String) {
