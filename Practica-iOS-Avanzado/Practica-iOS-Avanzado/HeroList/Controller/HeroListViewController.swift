@@ -7,88 +7,113 @@
 
 import UIKit
 
+
 class HeroesListViewController: UIViewController {
     
     var mainView: HeroeListView {self.view as! HeroeListView}
-    
+    var heroesListCoreDataFiltered: [Hero] = []
     var heroesList: [HeroModel] = []
 
     private var tableViewDataSource: HeroesListTableViewDataSource?
     private var tableVideDelegate: HeroesListTableViewDelegate?
     
-    private var heroeListViewModel: HeroesListViewModel?
+    private var heroeListViewModel = HeroesListViewModel()
+    private var mapViewModel = HeroesMapViewModel()
     private var loginViewModel = LoginViewModel()
     
     private var loginViewController: LoginViewController?
+    
+    var logoutButton : UIButton?
 
+    
     
     override func loadView() {
         view = HeroeListView()
-        setTableElements()
+        
     }
-    
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //createRefreshControll()
+
+        let gestureTap = UITapGestureRecognizer(target: self, action: #selector(logout(_:)))
+        mainView.logoutButton.addGestureRecognizer(gestureTap)
         
-        heroeListViewModel = HeroesListViewModel(apiClient: ApiClient.shared)
-        getData()
+        mainView.logoutButton.addTarget(self, action: #selector(deleteCoreData), for: .touchUpInside)
+        
+        setTableElements()
 //        setDidTapOnCell()
+//        addNotification()
         
-        // check if user is logged in
-        if !isUserAuthenticated() {
+        // Check if user is logged in
+        if readDataKeychain(getEmail()) == "" {
             
-            loginViewController = LoginViewController(delegate: self) // Creo el LoginViewController
-            if let loginViewController  { //Es lo mismo que si pones = loginViewController 5,7
-                loginViewController.modalPresentationStyle = .fullScreen //Aquí indicamos que ocupa toda la pantalla del login,y no puedan quitarla.
-                self.navigationController?.present(loginViewController, animated: true)
-            }
+            presentLoginViewController()
             return
+        }
+        
+//        getFullHeroeApiClient()
+
+        
+    }
+    
+    
+    
+    func presentLoginViewController() {
+        // Creo el login view controller
+        loginViewController = LoginViewController(coder: NSCoder())
+        
+        // show the login view controller
+        if let loginViewController { // swift 5.7
+            loginViewController.modalPresentationStyle = .fullScreen
+            self.navigationController?.present(loginViewController, animated: true)
         }
     }
     
     
-    private func setTableElements() {
+    
+    
+    func setTableElements(){
         tableVideDelegate = HeroesListTableViewDelegate()
         tableViewDataSource = HeroesListTableViewDataSource(tableView: mainView.heroesTableView)
+        //mainView.searchBar.delegate = self
         mainView.heroesTableView.dataSource = tableViewDataSource
         mainView.heroesTableView.delegate = tableVideDelegate
     }
     
-    private func getData() {
-        
-        // Nos preparamos para capturar los datos devueltos por el api rest
-        heroeListViewModel?.updateUI = { [weak self] heroes in
-            self?.heroesList = heroes
-            self?.tableViewDataSource?.set(heroes: heroes)
+    private func setDidTapOnCell() {
+                    tableVideDelegate?.didTapOnCell = { [weak self] index in
+                        guard let datasource = self?.tableViewDataSource else { return }
+
+                        _ = datasource.heroes[index]
+
+                        let heroDetailViewController = HeroDetailViewController(heroModel: Hero())
+
+                        // Presentamos el nuevo view controller
+                        self?.present(heroDetailViewController, animated: true)
+                    }
         }
+    
+
+    
+    @objc
+    func logout(_ gestureTap: UITapGestureRecognizer) {
+        deleteTokenKeychain(getEmail())
+        presentLoginViewController()
         
-        // Ejecutamos la llamada al api rest
-        heroeListViewModel?.getData()
         
     }
     
-//    private func setDidTapOnCell() {
-//        tableVideDelegate?.didTapOnCell = { [weak self] index in
-//            guard let datasource = self?.tableViewDataSource else { return }
-//
-//            let heroModel = datasource.heroes[index]
-//
-//            let heroDetailViewController = HeroDetailViewController(heroModel: heroModel)
-//
-//            // Presentamos el nuevo view controller
-//            self?.present(heroDetailViewController, animated: true)
-//        }
-//    }
-}
-    
-extension HeroesListViewController: LoginDelegate {
-    func dismiss() {
-        debugPrint("dismiss en login view controller")
+    @objc
+    func deleteCoreData(){
+        deleteHeroesCoreData()
         DispatchQueue.main.async {
-            self.loginViewController?.dismiss(animated: true)
-            //En esta func indicamos que cierre el Login
-            self.getData()
+            self.mainView.heroesTableView.reloadData()
         }
+
     }
     
+    
 }
+
+

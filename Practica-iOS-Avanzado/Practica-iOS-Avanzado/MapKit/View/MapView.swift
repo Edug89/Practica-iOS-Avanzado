@@ -13,6 +13,7 @@ class MapView: UIView {
     
     let mapView: MKMapView = {
         let map = MKMapView()
+        
         map.overrideUserInterfaceStyle = .dark
         map.translatesAutoresizingMaskIntoConstraints = false
         return map

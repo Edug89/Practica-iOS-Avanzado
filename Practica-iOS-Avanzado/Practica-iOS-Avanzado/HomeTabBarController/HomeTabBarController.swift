@@ -18,7 +18,7 @@ class HomeTabBarController: UITabBarController {
         
     }
     private func setupTabs() {
-        let navigationController1 = UINavigationController(rootViewController: HeroesListViewController()) ///Instanciamos la clase, y le indicamos que cargue el HeroesListViewController
+        let navigationController1 = UINavigationController(rootViewController: HeroesListViewController(coder: NSCoder())!) ///Instanciamos la clase, y le indicamos que cargue el HeroesListViewController
         let tabImage = UIImage(systemName: "text.justify")!
         navigationController1.tabBarItem = UITabBarItem(title: "ListadoHeroes", image: tabImage, tag: 0)
         

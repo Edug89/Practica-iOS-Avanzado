@@ -9,7 +9,20 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    lazy var coreDataUsers: CoreDataManager = .init(modelName: "User")
+    lazy var coreDataHeroes: CoreDataManager = .init(modelName: "Heroe")
 
+        
+    static let sharedAppDelegate: AppDelegate = {
+       
+        guard let delegate = UIApplication.shared.delegate as? AppDelegate else {
+            fatalError("Error during app delegate creation")
+        }
+        
+        return delegate
+        
+    }()
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

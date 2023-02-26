@@ -8,19 +8,20 @@
 import Foundation
 
 class HeroesListViewModel: NSObject {
-    private var apiClient: ApiClient?
-    
-    init(apiClient: ApiClient) {
-        self.apiClient = apiClient
-    }
-    
-    var updateUI: ((_ heroesList: [HeroModel]) -> Void)?
-    
-    func getData() {
-        guard let apiClient = self.apiClient else { return  }
+ 
+    override init() {
         
-        apiClient.getHeroes { [weak self] heroes, error in
-            self?.updateUI?(heroes)
-        }
     }
+    var updateUI: ((_ heroes: [HeroModel])-> Void)?
+    
+    func getData(){
+        
+        let apiClient = ApiClient(token: readDataKeychain(getEmail()))
+        apiClient.getHeroes { [ weak self ] heroes, error in
+            self?.updateUI?(heroes)
+           
+        }
+      
+    }
+    
 }

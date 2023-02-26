@@ -28,6 +28,18 @@ class HeroeListView: UIView {
         return tableView
     } ()
     
+    let logoutButton = {
+        let button = UIButton()
+        button.setTitle("logout", for: .normal)
+        button.layer.borderWidth = 1
+        button.layer.cornerRadius = 5
+        button.backgroundColor = .blue
+        button.layer.borderColor = UIColor.blue.cgColor
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        return button
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -38,13 +50,13 @@ class HeroeListView: UIView {
     }
     
     func setupView() {
-        
         backgroundColor = .gray
         addSubview(headerLabel)
         addSubview(heroesTableView)
+        addSubview(logoutButton)
         
         NSLayoutConstraint.activate([
-            headerLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20),
+            headerLabel.topAnchor.constraint(equalTo: topAnchor, constant: 60),
             headerLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             headerLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             headerLabel.heightAnchor.constraint(equalToConstant: 20),
@@ -52,9 +64,20 @@ class HeroeListView: UIView {
             heroesTableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             heroesTableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             heroesTableView.topAnchor.constraint(equalTo: headerLabel.bottomAnchor, constant: 20),
-            heroesTableView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            heroesTableView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            
+            logoutButton.topAnchor.constraint(equalTo: headerLabel.topAnchor, constant: 40),
+            logoutButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -6),
+            logoutButton.widthAnchor.constraint(equalToConstant: 100),
+            logoutButton.heightAnchor.constraint(equalToConstant: 40),
+            
         ])
         
     }
+    
+    func getLougoutButton() -> UIButton {
+        return logoutButton
+    }
+    
     
 }

@@ -24,11 +24,12 @@ class LoginViewController: UIViewController {
     var viewModel: LoginViewModel?
     
     var delegate: LoginDelegate?
+    
     init(delegate: LoginDelegate) {
         super.init(nibName: nil, bundle: nil)
         self.delegate = delegate
     }
-    
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
@@ -52,44 +53,48 @@ class LoginViewController: UIViewController {
         
         loginButton?.addTarget(self, action: #selector(didLoginTapped), for: .touchUpInside)
         
-        #if DEBUG
+#if DEBUG
         
         emailTextfield?.text = "edugproduce@gmail.com"
         passwordTextfield?.text = "200789"
         
-        #endif
+#endif
     }
-
+    
     @objc
     func didLoginTapped(sender: UIButton) {
         guard let email = emailTextfield?.text, let password = passwordTextfield?.text else { //Una vez pulsamos el botón de acceder,comprueba el token que no está vacío y navegamos al HomeTabBarController
             return
         }
-
+        
         viewModel?.updateUI = { [weak self] token, error in
-            if !token.isEmpty {
-                authToken = token // almacenarlo globalmente
-
-                DispatchQueue.main.async {
-                    let homeTabBarController = HomeTabBarController()
-                    homeTabBarController.modalPresentationStyle = .fullScreen
-                    self?.present(homeTabBarController, animated: true, completion: nil)
-                }
+            if readDataKeychain(email) == "" {
+                saveDataKeychain(token, email) // Si leemos el kaychain y está vacío guardamos token y email
+                saveEmail(email)
+                
+                // Prepare the info to notification
+                let loginResponse = ["miData": ["token": token]]
+                // Send a notification
+                NotificationCenter.default.post(name: NSNotification.Name("notification.login.result"),
+                                                object: nil,
+                                                userInfo: loginResponse)
                 return
             }
-
+            
             if !error.isEmpty {
                 DispatchQueue.main.async {
                     self?.errorMessageView?.text = error
                 }
-                authToken = ""
+                deleteTokenKeychain(email)
             }
         }
-
+        
         // Call view model to perform the login call with the apiClient
         viewModel?.login(email: email, password: password)
     }
-
+    
+    }
+    private func loginAndSaveTokenInKeychain(){
 }
 
 

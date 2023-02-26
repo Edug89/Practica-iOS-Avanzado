@@ -10,7 +10,8 @@ import Foundation
 struct HeroModel: Decodable {
   let photo: String
   let id: String
-  let favorite: Bool
   let name: String
   let description: String
+  var latitud: Double?
+  var longitud: Double?
 }

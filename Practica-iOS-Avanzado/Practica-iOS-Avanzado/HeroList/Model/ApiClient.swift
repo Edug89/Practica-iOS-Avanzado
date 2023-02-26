@@ -138,6 +138,40 @@ final class ApiClient {
 
       task.resume()
     }
+   
+    func getLocationHeroes(with id: String, completion: @escaping ([HeroCoordenates], Error?) -> Void) {
+          guard let url = URL(string: "\(Constants.api_base_url)/heros/locations"), let token = self.token else {
+            completion([], NetworkError.malformedURL)
+            return
+          }
 
+          var urlComponents = URLComponents()
+          urlComponents.queryItems = [URLQueryItem(name: "id", value: id)]
+
+          var urlRequest = URLRequest(url: url)
+          urlRequest.httpMethod = "POST"
+          urlRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+          urlRequest.httpBody = urlComponents.query?.data(using: .utf8)
+
+          let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+            guard error == nil else {
+              completion([], NetworkError.unknown)
+              return
+            }
+
+            guard let data = data else {
+              completion([], NetworkError.noData)
+              return
+            }
+
+            guard let response = try? JSONDecoder().decode([HeroCoordenates].self, from: data) else {
+              completion([], NetworkError.decodingFailed)
+              return
+            }
+            completion(response, nil)
+          }
+
+          task.resume()
+        }
 
 }
