@@ -1,10 +1,10 @@
-##Práctica iOS Avanzado  
+##Práctica iOS Avanzado##  
 
 Hacer log in. La información devuelta por este endpoint deberá guardarse 
 en el Keychain.  
 
 
-Listarlos superhéroes.  
+Listar los superhéroes.  
 
 Mostrar un mapa con los superhéroes.  
 
